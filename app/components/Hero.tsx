@@ -4,7 +4,6 @@ import OpenVipModalButton from "./OpenVipModalButton";
 export default function Hero() {
   return (
     <section className="relative isolate min-h-[640px] sm:min-h-[760px] md:min-h-[900px] bg-page">
-      <div className="starfield" />
 
       <div
         className="pointer-events-none absolute inset-0 animate-hero-bg"
@@ -20,19 +19,19 @@ export default function Hero() {
         />
       </div>
 
-      <div
-        // className="pointer-events-none absolute left-1/2 -top-[88px] bottom-0 w-[1265px] -translate-x-1/2 animate-hero-lightray"
-        aria-hidden
-      >
-        {/*<Image*/}
-        {/*  src="/light-ray.svg"*/}
-        {/*  alt=""*/}
-        {/*  fill*/}
-        {/*  sizes="1265px"*/}
-        {/*  className="object-cover object-top"*/}
-        {/*  priority*/}
-        {/*/>*/}
-      </div>
+      {/*<div*/}
+      {/*  className="pointer-events-none absolute left-1/2 -top-[88px] w-[1065px] h-[1598px] -translate-x-1/2"*/}
+      {/*  aria-hidden*/}
+      {/*>*/}
+      {/*  <Image*/}
+      {/*    src="/light-ray.svg"*/}
+      {/*    alt=""*/}
+      {/*    fill*/}
+      {/*    sizes="1065px"*/}
+      {/*    className="object-cover object-top"*/}
+      {/*    priority*/}
+      {/*  />*/}
+      {/*</div>*/}
 
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 h-[260px] sm:h-[340px] md:h-[420px] animate-hero-deck"

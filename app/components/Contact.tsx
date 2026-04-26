@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "./Reveal";
 
 type Row = { icon: string; label: string; value: string; href: string };
 
@@ -67,51 +68,57 @@ export default function Contact() {
 
       <div className="section-inner mx-auto max-w-[1440px] px-4 sm:px-6 md:px-12 lg:px-24">
         <div className="mx-auto flex w-full max-w-[960px] flex-col items-center gap-10 sm:gap-12 md:gap-16 rounded-[20px] sm:rounded-[24px] bg-card px-4 pb-5 pt-8 sm:px-6 sm:pb-6 sm:pt-10 md:px-12">
-          <div className="flex max-w-[540px] flex-col items-center gap-3 sm:gap-4 text-center">
-            <h2 className="font-display text-[36px] sm:text-[44px] md:text-[56px] italic leading-[0.9] tracking-[-0.04em] gold-italic-text">
-              Access The Network
-            </h2>
-            <p className="max-w-[420px] text-[15px] sm:text-[17px] md:text-[18px] leading-6 sm:leading-7 tracking-[-0.02em] text-body">
-              For quick communication, reach us directly on Telegram. We reply
-              24/7.
-            </p>
-          </div>
+          <Reveal>
+            <div className="flex max-w-[540px] flex-col items-center gap-3 sm:gap-4 text-center">
+              <h2 className="font-display text-[36px] sm:text-[44px] md:text-[56px] italic leading-[0.9] tracking-[-0.04em] gold-italic-text">
+                Access The Network
+              </h2>
+              <p className="max-w-[420px] text-[15px] sm:text-[17px] md:text-[18px] leading-6 sm:leading-7 tracking-[-0.02em] text-body">
+                For quick communication, reach us directly on Telegram. We reply
+                24/7.
+              </p>
+            </div>
+          </Reveal>
 
           <div className="flex w-full flex-col gap-4 md:flex-row">
-            <EnquiryCard
-              title="Player Enquiries"
-              rows={[
-                {
-                  icon: "/figma/telegram.svg",
-                  label: "Telegram",
-                  value: "@RollHighClub",
-                  href: "https://t.me/RollHighClub",
-                },
-                {
-                  icon: "/figma/mail.svg",
-                  label: "Email",
-                  value: "vip@rollhighclub.com",
-                  href: "mailto:vip@rollhighclub.com",
-                },
-              ]}
-            />
-            <EnquiryCard
-              title="Partnership Enquiries"
-              rows={[
-                {
-                  icon: "/figma/telegram.svg",
-                  label: "Telegram",
-                  value: "@RHCpartners",
-                  href: "https://t.me/RHCpartners",
-                },
-                {
-                  icon: "/figma/mail.svg",
-                  label: "Email",
-                  value: "partners@rollhighclub.com",
-                  href: "mailto:partners@rollhighclub.com",
-                },
-              ]}
-            />
+            <Reveal delay={120} className="flex flex-1">
+              <EnquiryCard
+                title="Player Enquiries"
+                rows={[
+                  {
+                    icon: "/figma/telegram.svg",
+                    label: "Telegram",
+                    value: "@RollHighClub",
+                    href: "https://t.me/RollHighClub",
+                  },
+                  {
+                    icon: "/figma/mail.svg",
+                    label: "Email",
+                    value: "vip@rollhighclub.com",
+                    href: "mailto:vip@rollhighclub.com",
+                  },
+                ]}
+              />
+            </Reveal>
+            <Reveal delay={240} className="flex flex-1">
+              <EnquiryCard
+                title="Partnership Enquiries"
+                rows={[
+                  {
+                    icon: "/figma/telegram.svg",
+                    label: "Telegram",
+                    value: "@RHCpartners",
+                    href: "https://t.me/RHCpartners",
+                  },
+                  {
+                    icon: "/figma/mail.svg",
+                    label: "Email",
+                    value: "partners@rollhighclub.com",
+                    href: "mailto:partners@rollhighclub.com",
+                  },
+                ]}
+              />
+            </Reveal>
           </div>
         </div>
       </div>

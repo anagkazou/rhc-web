@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 function NodeLabel({ label }: { label: string }) {
   return (
@@ -24,15 +25,18 @@ export default function Network() {
     <section className="section-shell bg-page pt-8 sm:pt-10 md:pt-12 pb-16 sm:pb-20 md:pb-28">
 
       <div className="section-inner mx-auto flex max-w-[1440px] flex-col items-center gap-8 sm:gap-12 px-4 sm:px-6 md:px-12 lg:px-24">
-        <SectionHeading
-          eyebrow="Network"
-          subtitle="A trusted connection between VIP players and the platforms that serve them."
-          maxWidth="735px"
-        >
-          <span className="block text-[#f5f5f5]">Connecting Players</span>
-          <span className="block italic gold-italic-text">And Platforms</span>
-        </SectionHeading>
+        <Reveal>
+          <SectionHeading
+            eyebrow="Network"
+            subtitle="A trusted connection between VIP players and the platforms that serve them."
+            maxWidth="735px"
+          >
+            <span className="block text-[#f5f5f5]">Connecting Players</span>
+            <span className="block italic gold-italic-text">And Platforms</span>
+          </SectionHeading>
+        </Reveal>
 
+        <Reveal delay={150} className="w-full">
         <div className="relative w-full">
           <svg
             aria-hidden
@@ -52,22 +56,28 @@ export default function Network() {
               fill="none"
               stroke="url(#connector)"
               strokeWidth="1"
+              pathLength="1"
+              className="draw-line"
             />
             <path
               d="M 880 170 Q 660 170 500 170"
               fill="none"
               stroke="url(#connector)"
               strokeWidth="1"
+              pathLength="1"
+              className="draw-line"
             />
             <path
               d="M 500 230 Q 500 320 500 340"
               fill="none"
               stroke="url(#connector)"
               strokeWidth="1"
+              pathLength="1"
+              className="draw-line"
             />
           </svg>
 
-          <div className="relative grid grid-cols-1 items-center gap-4 md:grid-cols-3">
+          <div className="stagger-children relative grid grid-cols-1 items-center gap-4 md:grid-cols-3">
             <NodeLabel label="Casinos" />
 
             <div
@@ -100,6 +110,7 @@ export default function Network() {
             <NodeLabel label="VIP Players" />
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );

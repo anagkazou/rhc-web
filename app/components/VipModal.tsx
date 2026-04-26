@@ -9,12 +9,43 @@ type Props = {
 
 export default function VipModal({ isOpen, onClose }: Props) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+    setSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      telegram_username: String(formData.get("telegram_username") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      message: String(formData.get("message") ?? ""),
+    };
+
+    try {
+      const res = await fetch("/api/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const { error: errMsg } = await res
+          .json()
+          .catch(() => ({ error: "Submission failed" }));
+        throw new Error(errMsg ?? "Submission failed");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Submission failed");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -40,7 +71,7 @@ export default function VipModal({ isOpen, onClose }: Props) {
             type="button"
             onClick={onClose}
             aria-label="Close"
-            className="flex size-8 shrink-0 items-center justify-center rounded-[8px] bg-pill text-text-soft transition-colors hover:bg-[#0e3a44]"
+            className="flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-[8px] bg-pill text-text-soft transition-colors hover:bg-[#0e3a44]"
           >
             <svg
               width="18"
@@ -76,7 +107,7 @@ export default function VipModal({ isOpen, onClose }: Props) {
           >
             <input
               type="text"
-              name="telegram"
+              name="telegram_username"
               required
               placeholder="Telegram Username"
               className="h-16 w-full rounded-[12px] bg-card-deep px-4 text-[16px] font-medium tracking-[-0.04em] text-text-soft placeholder:text-[#b5b1ac] focus:outline-none focus:ring-1 focus:ring-accent"
@@ -88,17 +119,24 @@ export default function VipModal({ isOpen, onClose }: Props) {
               placeholder="Email"
               className="h-16 w-full rounded-[12px] bg-card-deep px-4 text-[16px] font-medium tracking-[-0.04em] text-text-soft placeholder:text-[#b5b1ac] focus:outline-none focus:ring-1 focus:ring-accent"
             />
-            <input
-              type="text"
-              name="info"
+            <textarea
+              name="message"
+              required
+              rows={4}
               placeholder="Player information"
-              className="h-16 w-full rounded-[12px] bg-card-deep px-4 text-[16px] font-medium tracking-[-0.04em] text-text-soft placeholder:text-[#b5b1ac] focus:outline-none focus:ring-1 focus:ring-accent"
+              className="min-h-[112px] w-full resize-y rounded-[12px] bg-card-deep px-4 py-4 text-[16px] font-medium tracking-[-0.04em] text-text-soft placeholder:text-[#b5b1ac] focus:outline-none focus:ring-1 focus:ring-accent"
             />
+            {error && (
+              <p className="text-[14px] text-red-400" role="alert">
+                {error}
+              </p>
+            )}
             <button
               type="submit"
-              className="gold-cta mt-4 inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-[8px] px-8 text-[16px] sm:text-[18px] font-medium uppercase tracking-[-0.04em] transition-transform hover:-translate-y-px"
+              disabled={submitting}
+              className="gold-cta mt-4 inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-[8px] px-8 text-[16px] sm:text-[18px] font-medium uppercase tracking-[-0.04em] transition-transform hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-70"
             >
-              Become a VIP
+              {submitting ? "Submitting…" : "Become a VIP"}
             </button>
           </form>
         )}

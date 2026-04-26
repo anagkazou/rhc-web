@@ -1,4 +1,5 @@
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 const cards = [
   {
@@ -24,19 +25,21 @@ export default function Advisory() {
       <div className="starfield" />
 
       <div className="section-inner mx-auto flex max-w-[1440px] flex-col items-center gap-8 sm:gap-12 px-4 sm:px-6 md:px-12 lg:px-24">
-        <SectionHeading
-          eyebrow="Advisory & Strategy"
-          subtitle="For partners who want deeper insight into the VIP segment."
-          maxWidth="600px"
-        >
-          <span className="text-white">More Than Access. </span>
-          <span className="italic gold-italic-text">Insight.</span>
-        </SectionHeading>
+        <Reveal>
+          <SectionHeading
+            eyebrow="Advisory & Strategy"
+            subtitle="For partners who want deeper insight into the VIP segment."
+            maxWidth="600px"
+          >
+            <span className="text-white">More Than Access. </span>
+            <span className="italic gold-italic-text">Insight.</span>
+          </SectionHeading>
+        </Reveal>
 
         <div className="grid w-full gap-4 md:grid-cols-3">
-          {cards.map((card) => (
+          {cards.map((card, idx) => (
+            <Reveal key={card.n} delay={100 + idx * 120} className="h-full">
             <article
-              key={card.n}
               className="flex min-h-[340px] md:h-[404px] flex-col gap-10 sm:gap-14 rounded-[12px] bg-card p-6"
             >
               <span className="inline-flex size-8 items-center justify-center rounded-[8px] bg-pill text-[13px] font-medium text-text-warm tracking-[-0.03em]">
@@ -59,6 +62,7 @@ export default function Advisory() {
                 </button>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
       </div>

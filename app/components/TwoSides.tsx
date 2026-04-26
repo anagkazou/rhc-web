@@ -1,5 +1,6 @@
 import SectionHeading from "./SectionHeading";
 import OpenVipModalButton from "./OpenVipModalButton";
+import Reveal from "./Reveal";
 
 const playerBullets = [
   "Better casino deals",
@@ -27,23 +28,25 @@ function Bullet({ children }: { children: string }) {
 export default function TwoSides() {
   return (
     <section className="section-shell bg-page pt-16 sm:pt-20 md:pt-28 pb-8 sm:pb-10 md:pb-12">
-      <div className="starfield" />
 
       <div className="section-inner mx-auto flex max-w-[1440px] flex-col items-center gap-8 sm:gap-12 px-4 sm:px-6 md:px-12 lg:px-24">
-        <SectionHeading
-          eyebrow="Club"
-          subtitle="Built for elite players and the platforms that serve them."
-        >
-          <span className="italic gold-italic-text">Two Sides.</span>{" "}
-          <span className="text-white">One Standard.</span>
-        </SectionHeading>
+        <Reveal>
+          <SectionHeading
+            eyebrow="Club"
+            subtitle="Built for elite players and the platforms that serve them."
+          >
+            <span className="italic gold-italic-text">Two Sides.</span>{" "}
+            <span className="text-white">One Standard.</span>
+          </SectionHeading>
+        </Reveal>
 
         <div className="grid w-full gap-4 lg:grid-cols-2">
+          <Reveal delay={100} className="h-full">
           <article
             id="players"
             className="flex h-full min-h-[420px] sm:min-h-[520px] flex-col justify-center rounded-[12px] bg-card px-6 py-10 sm:px-10 sm:py-14 md:px-12 md:py-16"
           >
-            <div className="flex flex-col gap-10 sm:gap-14">
+            <div className="flex flex-col gap-10 sm.:gap-14">
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-4 border-b border-divider pb-6">
                   <h3 className="font-display text-[36px] sm:text-[44px] md:text-[52px] leading-[0.9] tracking-[-0.04em]">
@@ -55,7 +58,7 @@ export default function TwoSides() {
                     personal hosting, and withdrawals you can count on.
                   </p>
                 </div>
-                <ul className="flex flex-col gap-4">
+                <ul className="stagger-children flex flex-col gap-4">
                   {playerBullets.map((b) => (
                     <Bullet key={b}>{b}</Bullet>
                   ))}
@@ -68,7 +71,9 @@ export default function TwoSides() {
               </OpenVipModalButton>
             </div>
           </article>
+          </Reveal>
 
+          <Reveal delay={250} className="h-full">
           <article
             id="partners"
             className="flex h-full min-h-[420px] sm:min-h-[520px] flex-col justify-center rounded-[12px] bg-card px-6 py-10 sm:px-10 sm:py-14 md:px-12 md:py-16"
@@ -85,7 +90,7 @@ export default function TwoSides() {
                     best offers through a trusted network.
                   </p>
                 </div>
-                <ul className="flex flex-col gap-4">
+                <ul className="stagger-children flex flex-col gap-4">
                   {partnerBullets.map((b) => (
                     <Bullet key={b}>{b}</Bullet>
                   ))}
@@ -99,6 +104,7 @@ export default function TwoSides() {
               </a>
             </div>
           </article>
+          </Reveal>
         </div>
       </div>
     </section>
