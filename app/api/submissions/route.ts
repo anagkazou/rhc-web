@@ -106,10 +106,9 @@ export async function POST(request: NextRequest) {
       messageLen: insertRow.message.length,
     });
 
-    const { data, error, status, statusText } = await supabase
+    const { error, status, statusText } = await supabase
       .from("contact_submissions")
-      .insert([insertRow])
-      .select();
+      .insert([insertRow]);
 
     if (error) {
       console.error(`[submissions ${reqId}] supabase error`, {
@@ -133,12 +132,10 @@ export async function POST(request: NextRequest) {
     }
 
     console.log(`[submissions ${reqId}] success`, {
-      insertedCount: data?.length ?? 0,
-      insertedId: data?.[0]?.id ?? null,
       durationMs: Date.now() - startedAt,
     });
 
-    return NextResponse.json({ success: true, data }, { status: 201 });
+    return NextResponse.json({ success: true }, { status: 201 });
   } catch (error) {
     console.error(`[submissions ${reqId}] unexpected error`, {
       name: error instanceof Error ? error.name : typeof error,
