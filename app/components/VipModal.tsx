@@ -123,7 +123,7 @@ export default function VipModal({ isOpen, onClose }: Props) {
               name="message"
               required
               rows={4}
-              placeholder="Player information"
+              placeholder="Message"
               className="min-h-[112px] w-full resize-y rounded-[12px] bg-card-deep px-4 py-4 text-[16px] font-medium tracking-[-0.04em] text-text-soft placeholder:text-[#b5b1ac] focus:outline-none focus:ring-1 focus:ring-accent"
             />
             {error && (
