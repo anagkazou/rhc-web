@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import VipModalProvider from "./components/VipModalProvider";
+import PartnerModalProvider from "./components/PartnerModalProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,7 +32,9 @@ export default function RootLayout({
       className={`${inter.variable} ${cormorant.variable}`}
     >
       <body>
-        <VipModalProvider>{children}</VipModalProvider>
+        <VipModalProvider>
+          <PartnerModalProvider>{children}</PartnerModalProvider>
+        </VipModalProvider>
       </body>
     </html>
   );

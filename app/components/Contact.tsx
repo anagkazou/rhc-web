@@ -11,7 +11,7 @@ function EnquiryCard({
   rows: Row[];
 }) {
   return (
-    <div className="flex min-h-[260px] sm:min-h-[301px] flex-1 flex-col justify-between gap-6 rounded-[16px] bg-card-deep px-5 pb-6 pt-7 sm:px-6 sm:pt-8">
+    <div className="flex btn-chamfer min-h-[260px] sm:min-h-[301px] flex-1 flex-col justify-between gap-6 rounded-[16px] bg-card-deep px-5 pb-6 pt-7 sm:px-6 sm:pt-8">
       <h3 className="text-[18px] sm:text-[20px] font-medium uppercase leading-none tracking-[-0.04em] text-text-light">
         {title}
       </h3>

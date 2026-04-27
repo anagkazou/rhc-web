@@ -23,6 +23,23 @@
   --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+@media (min-width: 1000px) {
+  html {
+    scroll-padding-top: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 html,
 body {
   background: var(--color-page);
@@ -330,6 +347,17 @@ body {
 
 .btn-chamfer-vip:hover {
   --btn-bg: #0e2530;
+}
+
+.card-glow {
+  --btn-bg: #0d323a !important;
+  border-radius: 12px;
+  cursor: default;
+}
+
+.card-glow:hover {
+  --btn-bg: #0d323a !important;
+  animation: none !important;
 }
 
 .btn-gradient-ring {

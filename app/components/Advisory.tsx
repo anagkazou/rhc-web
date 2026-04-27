@@ -40,7 +40,7 @@ export default function Advisory() {
           {cards.map((card, idx) => (
             <Reveal key={card.n} delay={100 + idx * 120} className="h-full">
             <article
-              className="flex min-h-[340px] md:h-[404px] flex-col gap-10 sm:gap-14 rounded-[12px] bg-card p-6"
+              className="btn-chamfer card-glow flex min-h-[340px] md:h-[404px] flex-col gap-10 sm:gap-14 p-6"
             >
               <span className="inline-flex size-8 items-center justify-center rounded-[8px] bg-pill text-[13px] font-medium text-text-warm tracking-[-0.03em]">
                 {card.n}

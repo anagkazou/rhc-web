@@ -22,8 +22,7 @@ function NodeLabel({ label }: { label: string }) {
 
 export default function Network() {
   return (
-    <section className="section-shell bg-page pt-8 sm:pt-10 md:pt-12 pb-16 sm:pb-20 md:pb-28">
-
+    <section className="relative bg-page pt-8 sm:pt-10 md:pt-12 pb-16 sm:pb-20 md:pb-28">
       <div className="section-inner mx-auto flex max-w-[1440px] flex-col items-center gap-8 sm:gap-12 px-4 sm:px-6 md:px-12 lg:px-24">
         <Reveal>
           <SectionHeading
