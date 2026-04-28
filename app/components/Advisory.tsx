@@ -1,5 +1,6 @@
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import OpenPartnerModalButton from "./OpenPartnerModalButton";
 
 const cards = [
   {
@@ -54,12 +55,12 @@ export default function Advisory() {
                     {card.body}
                   </p>
                 </div>
-                <button
-                  type="button"
+                <OpenPartnerModalButton
                   className="btn-chamfer inline-flex h-12 w-full items-center justify-center whitespace-nowrap px-8 text-[15px] uppercase tracking-[-0.03em] text-text-warm"
+                  ariaLabel={`Learn more about ${card.title}`}
                 >
                   Learn More
-                </button>
+                </OpenPartnerModalButton>
               </div>
             </article>
             </Reveal>
