@@ -23,18 +23,18 @@ export default function ClubNetworkBlock() {
       </div>
 
       {/* ── Decorative bg-coin (poker chip) ── */}
-      <div
-        className="pointer-events-none absolute right-[4%] top-[38%] z-10 w-[320px] sm:w-[420px] md:w-[520px] lg:w-[603px] opacity-90"
-        aria-hidden
-      >
-        <Image
-          src="/bg-coin.svg"
-          alt=""
-          width={603}
-          height={494}
-          className="h-auto w-full"
-        />
-      </div>
+      {/*<div*/}
+      {/*  className="pointer-events-none absolute right-[4%] top-[38%] z-10 w-[320px] sm:w-[420px] md:w-[520px] lg:w-[603px] opacity-90"*/}
+      {/*  aria-hidden*/}
+      {/*>*/}
+      {/*  <Image*/}
+      {/*    src="/bg-coin.svg"*/}
+      {/*    alt=""*/}
+      {/*    width={603}*/}
+      {/*    height={494}*/}
+      {/*    className="h-auto w-full"*/}
+      {/*  />*/}
+      {/*</div>*/}
 
       {/* ── Sections ── */}
       <TwoSides />

@@ -53,11 +53,11 @@ export default function VipModal({ isOpen, onClose }: Props) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="vip-modal-title"
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 px-4 py-8 backdrop-blur-md"
+      className="modal-backdrop-enter fixed inset-0 z-[100] flex items-center justify-center bg-black/60 px-4 py-8 backdrop-blur-md"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-[560px] rounded-[20px] bg-card px-6 pb-6 pt-10 sm:rounded-[24px] sm:px-8 sm:pt-10"
+        className="modal-content-enter relative w-full max-w-[560px] rounded-[20px] bg-card px-6 pb-6 pt-10 sm:rounded-[24px] sm:px-8 sm:pt-10"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-4">
