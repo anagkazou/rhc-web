@@ -30,7 +30,7 @@ export default function Network() {
             subtitle="A trusted connection between VIP players, affiliates and the platforms that serve them."
             maxWidth="735px"
           >
-            <span className="block text-[#f5f5f5]">Connecting Players,</span>
+            <span className="block text-[#f5f5f5] mb-1.25">Connecting Players,</span>
             <span className="block italic gold-italic-text">Affiliates And Platforms</span>
           </SectionHeading>
         </Reveal>
