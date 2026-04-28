@@ -77,22 +77,22 @@ export default function Hero() {
 
       {/* Grouped floating composition (cards / chips / left dice / right coin) */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/hero-items.png"
-        alt=""
-        aria-hidden
-        className="pointer-events-none grayscale absolute inset-x-0 bottom-0 z-20 w-full h-auto coin-float"
-      />
+      {/*<img*/}
+      {/*  src="/hero-items.png"*/}
+      {/*  alt=""*/}
+      {/*  aria-hidden*/}
+      {/*  className="pointer-events-none grayscale absolute inset-x-0 bottom-0 z-20 w-full h-auto coin-float"*/}
+      {/*/>*/}
 
       {/* The overlapping right dice — kept separate, layered above */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/hero-right-dice.svg"
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute grayscale right-0 -bottom-[6%] z-30 w-[14vw] h-auto coin-float md:hidden lg:block"
-        style={{ animationDelay: "2.5s" }}
-      />
+      {/*<img*/}
+      {/*  src="/hero-right-dice.svg"*/}
+      {/*  alt=""*/}
+      {/*  aria-hidden*/}
+      {/*  className="pointer-events-none absolute grayscale right-0 -bottom-[6%] z-30 w-[14vw] h-auto coin-float md:hidden lg:block"*/}
+      {/*  style={{ animationDelay: "2.5s" }}*/}
+      {/*/>*/}
 
       <div
         ref={contentRef}
