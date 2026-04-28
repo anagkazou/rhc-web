@@ -27,15 +27,19 @@ export default function Footer() {
           </span>
           <div className="flex items-center gap-2">
             <a
-              href="#"
-              aria-label="X (Twitter)"
+              href="https://x.com/RollHighClub"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X — @RollHighClub"
               className="btn-gradient-ring flex size-10 items-center justify-center rounded-full"
             >
               <Image src="/figma/x-logo.svg" alt="" width={18} height={16} />
             </a>
             <a
-              href="#"
-              aria-label="Telegram"
+              href="https://t.me/RollHighClubAnnouncements"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram Announcements"
               className="btn-gradient-ring flex size-10 items-center justify-center rounded-full"
             >
               <Image
