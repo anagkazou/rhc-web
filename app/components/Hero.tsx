@@ -105,9 +105,7 @@ export default function Hero() {
             <span className="block italic gold-italic-text">Anywhere</span>
           </h1>
           <p className="mx-auto mt-6 sm:mt-8 max-w-150 text-[15px] sm:text-[18px] leading-7 sm:leading-8 text-body animate-hero-subtitle">
-            A Private Network Connecting VIP Players With Unbeatable Offers
-            Across Platforms And Affiliates. Quiet, Disciplined, And Built On
-            Trust.
+            A private network connecting VIP players with unbeatable offers across platforms and affiliates. Quiet, disciplined, and built on trust.
           </p>
 
           <div className="mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-6 animate-hero-cta">
