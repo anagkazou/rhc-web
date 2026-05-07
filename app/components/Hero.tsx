@@ -69,7 +69,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         <div
           ref={bgRef}
-          className="absolute inset-0 bg-[url('/hero-casino.png')] bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-[url('/hero-vip-card.png')] bg-cover bg-center bg-no-repeat"
           style={{ scale: "1.1", willChange: "translate" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-page/20 via-transparent to-page" />
